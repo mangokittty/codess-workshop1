@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PetCard from "./PetCard";
+import PetCard from "./components/PetCard";
 import Pet from "./Pet";
 import "./App.css";
 import { Container, Row, Col, CardColumns } from "react-bootstrap";
@@ -19,17 +19,19 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <CardColumns>
-            {pets.map(pet => (
-              <PetCard key={pet.id} pet={pet} />
-            ))}
-          </CardColumns>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <CardColumns>
+              {pets.map(pet => (
+                <PetCard key={pet.id} pet={pet} />
+              ))}
+            </CardColumns>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 
